@@ -27,7 +27,7 @@ keymatch = {
     "P": ["Wirkleistung", -17000, 17000, 40087, 0, []],
     "F": ["HZ", 40, 60, 40070, 1, []],
     "PIn": ["Power_in", 20000, 60000, 40090, 1, []],
-    "POut": ["Power_out", 20000, 60000, 40090, 1, []]
+    "POut": ["Power_out", 20000, 60000, 40091, 1, []]
 }
 db = DataBank()
 config = ConfigParser()
