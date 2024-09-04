@@ -128,8 +128,6 @@ The following Modbus addresses are used to query specific values. Each entry inc
 | Power_in           | 40090               | Holding Register  | 1                      | 10<sup>-1</sup>           |
 | Power_out          | 40091               | Holding Register  | 1                      | 10<sup>-1</sup>           |
 
-*Note: `Power_in` and `Power_out` use different addresses (`40090` and `40091`) to avoid conflicts and accurately distinguish between the values.*
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
