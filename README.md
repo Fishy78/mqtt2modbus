@@ -111,6 +111,23 @@ sudo systemctl status mqtt2modbus.service
 - Ensure that your MQTT broker is receiving data from the Tasmota ESP8266.
 - Verify that Modbus registers are being updated by polling the Modbus server.
 
+## Modbus Register Addresses
+
+The following Modbus addresses are used to query specific values:
+
+| **Metric**     | **Modbus Address** | **Register Type** |
+|----------------|---------------------|-------------------|
+| Voltage L1     | 40077               | Holding Register  |
+| Voltage L2     | 40078               | Holding Register  |
+| Voltage L3     | 40079               | Holding Register  |
+| Current L1     | 40072               | Holding Register  |
+| Current L2     | 40073               | Holding Register  |
+| Current L3     | 40074               | Holding Register  |
+| Power (Wirkleistung) | 40087         | Holding Register  |
+| Frequency (HZ) | 40070               | Holding Register  |
+| Power_in       | 40090               | Holding Register  |
+| Power_out      | 40091               | Holding Register  |
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
