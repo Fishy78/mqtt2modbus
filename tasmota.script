@@ -1,0 +1,16 @@
+>D
+>B
+->sensor53 r
+>M 1
++1,5,s,0,9600,ZAEHLER,1,10,2F3F210D0A,063035310D0A
+
+1,77070100010800ff@1000,Gesamt kWh bezogen,kWh,Power_in,1
+1,77070100020800ff@1000,Gesamt kWh geliefert,kWh,Power_out,1
+1,77070100100700ff@1,Verbrauch aktuell,W,Wirkleistung,0
+1,77070100200700ff@1,Voltage L1,V,Spannung_L1,1
+1,77070100340700ff@1,Voltage L2,V,Spannung_L2,1
+1,77070100480700ff@1,Voltage L3,V,Spannung_L3,1
+1,770701001f0700ff@1,Amperage L1,A,Strom_L1,2
+1,77070100330700ff@1,Amperage L2,A,Strom_L2,2
+1,77070100470700ff@1,Amperage L3,A,Strom_L3,2
+1,770701000e0700ff@1,Frequency,Hz,HZ,2
