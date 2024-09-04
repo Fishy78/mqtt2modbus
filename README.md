@@ -49,9 +49,9 @@ Upload the following script to your Tasmota device to configure it for reading p
 1,77070100200700ff@1,Voltage L1,V,Spannung_L1,1
 1,77070100340700ff@1,Voltage L2,V,Spannung_L2,1
 1,77070100480700ff@1,Voltage L3,V,Spannung_L3,1
-1,770701001f0700ff@1,Amperage L1,A,Strom_L1,2
-1,77070100330700ff@1,Amperage L2,A,Strom_L2,2
-1,77070100470700ff@1,Amperage L3,A,Strom_L3,2
+1,770701001f0700ff@1,Amperage L1,A,Strom_L1,1
+1,77070100330700ff@1,Amperage L2,A,Strom_L2,1
+1,77070100470700ff@1,Amperage L3,A,Strom_L3,1
 1,770701000e0700ff@1,Frequency,Hz,HZ,2
 ```
 
@@ -113,20 +113,22 @@ sudo systemctl status mqtt2modbus.service
 
 ## Modbus Register Addresses
 
-The following Modbus addresses are used to query specific values:
+The following Modbus addresses are used to query specific values. Each entry includes the Modbus register address, the length of the data, and the scaling factor (`10^x`), where `x` is negative for scaling down:
 
-| **Metric**     | **Modbus Address** | **Register Type** |
-|----------------|---------------------|-------------------|
-| Voltage L1     | 40077               | Holding Register  |
-| Voltage L2     | 40078               | Holding Register  |
-| Voltage L3     | 40079               | Holding Register  |
-| Current L1     | 40072               | Holding Register  |
-| Current L2     | 40073               | Holding Register  |
-| Current L3     | 40074               | Holding Register  |
-| Power (Wirkleistung) | 40087         | Holding Register  |
-| Frequency (HZ) | 40070               | Holding Register  |
-| Power_in       | 40090               | Holding Register  |
-| Power_out      | 40091               | Holding Register  |
+| **Metric**         | **Modbus Address** | **Register Type** | **Length (Registers)** | **Faktor 10<sup>x</sup>** |
+|--------------------|---------------------|-------------------|------------------------|-----------------|
+| Voltage L1         | 40077               | Holding Register  | 1                      | 10<sup>-1</sup>           |
+| Voltage L2         | 40078               | Holding Register  | 1                      | 10<sup>-1</sup>           |
+| Voltage L3         | 40079               | Holding Register  | 1                      | 10<sup>-1</sup>           |
+| Current L1         | 40072               | Holding Register  | 1                      | 10<sup>-2</sup>           |
+| Current L2         | 40073               | Holding Register  | 1                      | 10<sup>-2</sup>           |
+| Current L3         | 40074               | Holding Register  | 1                      | 10<sup>-2</sup>           |
+| Power (Wirkleistung) | 40087             | Holding Register  | 1                      | 10<sup>0</sup>            |
+| Frequency (HZ)     | 40070               | Holding Register  | 1                      | 10<sup>-1</sup>            |
+| Power_in           | 40090               | Holding Register  | 1                      | 10<sup>-1</sup>           |
+| Power_out          | 40091               | Holding Register  | 1                      | 10<sup>-1</sup>           |
+
+*Note: `Power_in` and `Power_out` use different addresses (`40090` and `40091`) to avoid conflicts and accurately distinguish between the values.*
 
 ## License
 
